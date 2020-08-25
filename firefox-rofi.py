@@ -8,9 +8,12 @@ r = Rofi()
 with open("websitelist.json","r") as websitelist:
 	websiteList = json.loads(websitelist.read())
 
-index, key = r.select('website', websiteList)
+index, key = r.select_with_entry('website',websiteList)
 
-if (key == -1):
-	exit()
+#print(index)
+#print(key)
 
-subprocess.run(["firefox","--new-tab",websiteList[index]])
+#if (key == -1):
+#	exit()
+
+#subprocess.run(["firefox","--new-tab",websiteList[index]])
